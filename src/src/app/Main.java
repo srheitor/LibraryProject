@@ -1,10 +1,7 @@
 package app;
 
-import JDBC.MyJDBC;
 import core.Utils;
-
 import java.sql.SQLException;
-
 import static core.Utils.*;
 
 public class Main {
@@ -19,7 +16,6 @@ public class Main {
                 Utils.showBooks();
                 int bookId = SCANNER.nextInt();
                 takeBook(bookId);
-
 
             }
 
