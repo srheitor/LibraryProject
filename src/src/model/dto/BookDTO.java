@@ -1,10 +1,17 @@
-package core.dto;
+package model.dto;
 
 public class BookDTO {
     private int idbook;
     private String bookname;
     private int bookstate;
     private String bookgenre;
+    private String bookAuthor;
+
+    public BookDTO(String bookname, String bookgenre, String bookAuthor) {
+        this.bookname = bookname;
+        this.bookgenre = bookgenre;
+        this.bookAuthor = bookAuthor;
+    }
 
     public int getIdbook() {
         return idbook;
