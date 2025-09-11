@@ -12,27 +12,11 @@ public class UserDTO {
     }
 
     public UserDTO(int userType) {
-        this.userType = userType;
-    }
-
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public String getUserName() {
-        return userName;
+        UserDTO.userType = userType;
     }
 
     public static void setUserName(String userName) {
         UserDTO.userName = userName;
-    }
-
-    public int getPassword() {
-        return password;
     }
 
     public static void setPassword(int password) {
@@ -40,11 +24,6 @@ public class UserDTO {
     }
 
     public int getUserType() {
-        return userType;
-    }
-
-    public static int setUserType(int userType) {
-        UserDTO.userType = userType;
         return userType;
     }
 
@@ -69,6 +48,7 @@ public class UserDTO {
     public static void loggOut() {
         System.out.println("Você saiu");
         System.exit(0);
+        boolean isRunning = false;
     }
 
 }
