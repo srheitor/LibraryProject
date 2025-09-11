@@ -11,6 +11,10 @@ public class UserDTO {
         UserDTO.password = password;
     }
 
+    public UserDTO(int userType) {
+        this.userType = userType;
+    }
+
     public int getIdUser() {
         return idUser;
     }
@@ -44,8 +48,27 @@ public class UserDTO {
         return userType;
     }
 
+    public static void welcome(){
+        System.out.println("Olá, seja bem vindo a livraria de teste do Heitor! \n" +
+                "Por favor digite seu usuário e senha: ");
+    }
+
     public static void userNotFound() {
         System.out.println("Esse usuário não existe");
         System.exit(0);
     }
+
+    public static void helloAdmin() {
+        System.out.println("Olá admin!, o que gostaria de fazer?");
+    }
+
+    public static void helloUser() {
+        System.out.println("Olá usuario!, o que gostaria de fazer?");
+    }
+
+    public static void loggOut() {
+        System.out.println("Você saiu");
+        System.exit(0);
+    }
+
 }

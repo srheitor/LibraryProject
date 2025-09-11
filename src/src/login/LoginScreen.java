@@ -7,8 +7,7 @@ import static core.Utils.SCANNER;
 
 public class LoginScreen {
     public static UserDTO login() {
-        System.out.println("Olá, seja bem vindo a livraria de teste do Heitor! \n" +
-                "Por favor digite seu usuário e senha: ");
+        UserDTO.welcome();
 
         System.out.print("Usuário: ");
         String userName = SCANNER.nextLine();
@@ -17,6 +16,7 @@ public class LoginScreen {
 
         UserDTO user = new UserDTO(userName, password);
         UserRepository.tryLogin(userName, password);
+
         return user;
     }
 }

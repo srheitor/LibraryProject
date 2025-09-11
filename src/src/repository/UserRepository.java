@@ -72,9 +72,9 @@ public class UserRepository {
         int userType = 0;
 
         if (tryLoginAdmin(userName, password)) {
-            userType = UserDTO.setUserType(USER_TYPE_ADMIN);
+            userType = new UserDTO(USER_TYPE_ADMIN).getUserType();
         } else if (tryLoginUser(userName, password)) {
-            userType = UserDTO.setUserType(USER_TYPE_USER);
+            userType = new UserDTO(USER_TYPE_USER).getUserType();
         } else {
             UserDTO.userNotFound();
         }

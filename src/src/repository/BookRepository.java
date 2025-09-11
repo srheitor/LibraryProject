@@ -42,6 +42,28 @@ public class BookRepository {
             pst.setString(2, bookName);
 
             pst.executeUpdate();
+
+            System.out.println("Livro emprestado com sucesso!");
+        } catch (SQLException e) {
+            System.out.println("Não foi possível pegar o livro");
+        }
+
+    }
+
+    public static void returnBook(String bookName) {
+        String sql = "UPDATE books SET bookState = ? WHERE bookName = ?";
+        try {
+            Connection connection = MyJDBC.connector();
+            PreparedStatement pst;
+
+            pst = connection.prepareStatement(sql);
+
+            pst.setInt(1, 1);
+            pst.setString(2, bookName);
+
+            pst.executeUpdate();
+
+            System.out.println("Livro devolvido com sucesso!");
         } catch (SQLException e) {
             System.out.println("Não foi possível pegar o livro");
         }
@@ -74,4 +96,5 @@ public class BookRepository {
             System.out.println("Não foi carregar a livraria!");
         }
     }
+
 }
