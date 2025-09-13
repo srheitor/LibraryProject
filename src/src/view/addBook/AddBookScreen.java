@@ -13,9 +13,15 @@ public class AddBookScreen {
         String bookGenre = SCANNER.nextLine().toUpperCase();
         System.out.println("Quem é o autor do livro que deseja adicionar?");
         String bookAuthor = SCANNER.nextLine().toUpperCase();
+        System.out.println("Qual a editora do livro que deseja adicionar?");
+        String bookPublisher = SCANNER.nextLine().toUpperCase();
+        System.out.println("Qual a condição que se encontra o livro que deseja adicionar?");
+        String bookCondition = SCANNER.nextLine().toUpperCase();
+        System.out.println("Digite o ISBN (International Standard Book Number) do livro: ?");
+        String bookISBN = SCANNER.nextLine().toUpperCase();
 
-        BookDTO book = new BookDTO(bookName, bookGenre, bookAuthor);
-        repository.addBook(bookName, bookGenre, bookAuthor);
+        BookDTO book = new BookDTO(bookName, bookGenre, bookAuthor, bookPublisher, bookCondition, bookISBN);
+        repository.addBook(bookName, bookGenre, bookAuthor, bookPublisher, bookCondition, bookISBN);
 
 
     }

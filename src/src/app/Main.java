@@ -5,6 +5,8 @@ import menu.MenuScreen;
 import model.dto.UserDTO;
 import repository.BookRepository;
 import view.addBook.AddBookScreen;
+import view.historyAdmin.HistoryAddScreen;
+import view.historyAdmin.HistoryAdminScreen;
 import view.returnBook.ReturnBookScreen;
 import view.showBooks.ShowBookScreen;
 import view.takeBook.TakeBookScreen;
@@ -28,7 +30,11 @@ public class Main {
 
                     case 2 -> AddBookScreen.addScreen(bookRepository);
 
-                    case 3 -> UserDTO.loggOut();
+                    case 3 -> HistoryAdminScreen.historyAdminScreen(bookRepository);
+
+                    case 4 -> HistoryAddScreen.historyAddScreen(bookRepository);
+
+                    case 5 -> UserDTO.loggOut();
 
                 }
             } else if (user.getUserType() == USER_TYPE_USER) {
@@ -41,7 +47,9 @@ public class Main {
 
                     case 3 -> ReturnBookScreen.returnScreen(bookRepository);
 
-                    case 4 -> UserDTO.loggOut();
+                    case 4 -> System.out.println("Seu histórico de livros");
+
+                    case 5 -> UserDTO.loggOut();
                 }
             } else {
                 UserDTO.userNotFound();

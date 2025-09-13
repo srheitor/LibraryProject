@@ -10,7 +10,7 @@ public class TakeBookScreen {
     public static void takeScreen(BookRepository repository) {
         ShowBookScreen.showScreen(repository);
 
-        System.out.println("Selecione qual livro você deseja pegar (Digite o nome do livro): ");
+        System.out.println("Digite o nome do livro que gostaria de pegar emprestado: ");
         String bookName = SCANNER.nextLine().toUpperCase();
 
         repository.takeBook(bookName);
