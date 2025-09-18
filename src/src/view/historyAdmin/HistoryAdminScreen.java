@@ -7,4 +7,8 @@ public class HistoryAdminScreen {
         System.out.println("Aqui está o histórico de livros que foram pegos: ");
         repository.showAdminHistory();
     }
+
+    public static void historyAdminError(){
+        System.out.println("Não foi possível carregar a livraria!");
+    }
 }

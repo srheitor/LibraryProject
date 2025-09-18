@@ -11,4 +11,12 @@ public class ReturnBookScreen {
 
         repository.returnBook(bookName);
     }
+
+    public static void returnBookSuccessful(){
+        System.out.println("Livro devolvido com sucesso!");
+    };
+
+    public static void returnBookError(){
+        System.out.println("Não foi possível pegar o livro");
+    };
 }

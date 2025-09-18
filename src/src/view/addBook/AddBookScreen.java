@@ -1,6 +1,5 @@
 package view.addBook;
 
-import model.dto.BookDTO;
 import repository.BookRepository;
 
 import static core.Utils.SCANNER;
@@ -20,9 +19,23 @@ public class AddBookScreen {
         System.out.println("Digite o ISBN (International Standard Book Number) do livro: ?");
         String bookISBN = SCANNER.nextLine().toUpperCase();
 
-        BookDTO book = new BookDTO(bookName, bookGenre, bookAuthor, bookPublisher, bookCondition, bookISBN);
         repository.addBook(bookName, bookGenre, bookAuthor, bookPublisher, bookCondition, bookISBN);
+    }
 
+    public static void printAddBookInfo(String bookName, String bookGenre, String bookAuthor, String bookPublisher, String bookCondition, String bookISBN){
+        System.out.println("Nome do livro: " + bookName);
+        System.out.println("Gênero do livro: " + bookGenre);
+        System.out.println("Autor do livro: " + bookAuthor);
+        System.out.println("Nome do livro: " + bookPublisher);
+        System.out.println("Gênero do livro: " + bookCondition);
+        System.out.println("Autor do livro: " + bookISBN);
+    }
 
+    public static void addBookSuccessful(){
+        System.out.println("Livro adicionado com sucesso!");
+    }
+
+    public static void addBookError(){
+        System.out.println("Livro adicionado com sucesso!");
     }
 }
