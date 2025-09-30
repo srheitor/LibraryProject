@@ -154,6 +154,8 @@ public class BookRepository {
         } catch (SQLException e) {
             showScreen.libraryError();
         }
+        Utils.waitEnter();
+        Utils.cleanScreen();
     }
 
     public static void showAddHistory() {

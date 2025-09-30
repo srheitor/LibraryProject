@@ -1,4 +1,4 @@
-package menu;
+package view.menu;
 
 import static core.Utils.SCANNER;
 

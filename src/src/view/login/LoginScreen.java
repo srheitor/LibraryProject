@@ -1,4 +1,4 @@
-package login;
+package view.login;
 
 import model.dto.UserDTO;
 import repository.UserRepository;

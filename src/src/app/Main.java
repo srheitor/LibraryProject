@@ -1,8 +1,8 @@
 package app;
 
 import core.Utils;
-import login.LoginScreen;
-import menu.MenuScreen;
+import view.login.LoginScreen;
+import view.menu.MenuScreen;
 import model.dto.UserDTO;
 import repository.BookRepository;
 import view.addBook.AddBookScreen;
@@ -29,11 +29,7 @@ public class Main {
                 try {
                     int choice = MenuScreen.adminMenu();
                     switch (choice) {
-                        case 1 -> {
-                            ShowBookScreen.showScreen(bookRepository);
-                            Utils.waitEnter();
-                            Utils.cleanScreen();
-                        }
+                        case 1 -> ShowBookScreen.showScreen(bookRepository);
 
                         case 2 -> AddBookScreen.addScreen(bookRepository);
 
@@ -58,20 +54,26 @@ public class Main {
 
             } else if (user.getUserType() == USER_TYPE_USER) {
                 UserDTO.helloUser();
-                int choice = MenuScreen.userMenu();
-                switch (choice) {
-                    case 1 -> ShowBookScreen.showScreen(bookRepository);
+                try {
+                    int choice = MenuScreen.userMenu();
+                    switch (choice) {
+                        case 1 -> ShowBookScreen.showScreen(bookRepository);
 
-                    case 2 -> TakeBookScreen.takeScreen(bookRepository);
+                        case 2 -> TakeBookScreen.takeScreen(bookRepository);
 
-                    case 3 -> ReturnBookScreen.returnScreen(bookRepository);
+                        case 3 -> ReturnBookScreen.returnScreen(bookRepository);
 
-                    case 4 -> HistoryUserScreen.historyUserScreen(bookRepository);
+                        case 4 -> HistoryUserScreen.historyUserScreen(bookRepository);
 
-                    case 5 -> {
-                        UserDTO.loggOut();
-                        isRunning = false;
+                        case 5 -> {
+                            UserDTO.loggOut();
+                            isRunning = false;
+                        }
+                        default -> UserDTO.invalidOption();
                     }
+                } catch (NumberFormatException e) {
+                    Utils.cleanScreen();
+                    Utils.invalidInput();
                 }
             } else {
                 UserDTO.userNotFound();
