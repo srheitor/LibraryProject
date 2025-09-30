@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Projeto de livraria em Java com SQL
 
 Sistema de biblioteca simples, desenvolvida em Java com banco de dados MySQL."
 
