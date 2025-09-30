@@ -1,4 +1,4 @@
-package login;
+package view.login;
 
 import model.dto.UserDTO;
 import repository.UserRepository;
@@ -12,7 +12,7 @@ public class LoginScreen {
         System.out.print("Usuário: ");
         String userName = SCANNER.nextLine();
         System.out.print("Senha: ");
-        int password = SCANNER.nextInt();
+        String password = SCANNER.nextLine();
 
         UserDTO user = new UserDTO(userName, password);
         UserRepository.tryLogin(userName, password);

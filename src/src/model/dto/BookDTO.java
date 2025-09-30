@@ -1,48 +1,21 @@
 package model.dto;
 
 public class BookDTO {
-    private int idbook;
-    private String bookname;
-    private int bookstate;
-    private String bookgenre;
+    private int idBook;
+    private String bookName;
+    private int bookStatus;
+    private String bookGenre;
     private String bookAuthor;
+    private String bookPublisher;
+    private String bookCondition;
+    private String bookISBN;
 
-    public BookDTO(String bookname, String bookgenre, String bookAuthor) {
-        this.bookname = bookname;
-        this.bookgenre = bookgenre;
+    public BookDTO(String bookName, String bookGenre, String bookAuthor, String bookPublisher, String bookCondition, String bookISBN) {
+        this.bookName = bookName;
+        this.bookGenre = bookGenre;
         this.bookAuthor = bookAuthor;
+        this.bookPublisher = bookPublisher;
+        this.bookCondition = bookCondition;
+        this.bookISBN = bookISBN;
     }
-
-    public int getIdbook() {
-        return idbook;
-    }
-
-    public void setIdbook(int idbook) {
-        this.idbook = idbook;
-    }
-
-    public String getBookname() {
-        return bookname;
-    }
-
-    public void setBookname(String bookname) {
-        this.bookname = bookname;
-    }
-
-    public int getBookstate() {
-        return bookstate;
-    }
-
-    public void setBookstate(int bookstate) {
-        this.bookstate = bookstate;
-    }
-
-    public String getBookgenre() {
-        return bookgenre;
-    }
-
-    public void setBookgenre(String bookgenre) {
-        this.bookgenre = bookgenre;
-    }
-
 }

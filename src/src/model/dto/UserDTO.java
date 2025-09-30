@@ -3,15 +3,15 @@ package model.dto;
 public class UserDTO {
     private static int idUser;
     private static String userName;
-    private static int password;
-    private static int userType;
+    private static String password;
+    private static String userType;
 
-    public UserDTO(String userName, int password) {
+    public UserDTO(String userName, String password) {
         UserDTO.userName = userName;
         UserDTO.password = password;
     }
 
-    public UserDTO(int userType) {
+    public UserDTO(String userType) {
         UserDTO.userType = userType;
     }
 
@@ -19,22 +19,30 @@ public class UserDTO {
         UserDTO.userName = userName;
     }
 
-    public static void setPassword(int password) {
+    public static void setPassword(String password) {
         UserDTO.password = password;
     }
 
-    public int getUserType() {
+    public String getUserType() {
         return userType;
     }
 
-    public static void welcome(){
+    public static int getIdUser() {
+        return idUser;
+    }
+
+    public static void setIdUser(int idUser) {
+        UserDTO.idUser = idUser;
+    }
+
+
+    public static void welcome() {
         System.out.println("Olá, seja bem vindo a livraria de teste do Heitor! \n" +
                 "Por favor digite seu usuário e senha: ");
     }
 
     public static void userNotFound() {
-        System.out.println("Esse usuário não existe");
-        System.exit(0);
+        System.out.println("Nome de usuário ou senha incorretos!");
     }
 
     public static void helloAdmin() {
@@ -47,8 +55,9 @@ public class UserDTO {
 
     public static void loggOut() {
         System.out.println("Você saiu");
-        System.exit(0);
-        boolean isRunning = false;
     }
 
+    public static void invalidOption() {
+        System.out.println("OPÇÃO INVÁLIDA");
+    }
 }
